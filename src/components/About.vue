@@ -1,7 +1,14 @@
 <script></script>
 <template>
-  <section class="container mx-auto md:px-48 py-2 mt-16">
-    <article class="md:px-0 px-6">
+  <section
+    class="container mx-auto md:px-48 mt-14 md:mt-20 grid grid-cols-1 md:grid-cols-4 gap-y-4 md:gap-4 place-items-center"
+  >
+    <img
+      src="../assets/images/profile.jpeg"
+      alt="Yuchen's profile photo"
+      class="profile shadow-lg hover:shadow-xl"
+    />
+    <article class="md:px-0 px-6 col-span-3">
       <h2 class="font-bold text-lg">Hi there! I'm Yuch3n. Based in Taiwan.</h2>
       <p class="text-pretty">
         As a multidisciplinary talent, I'm actively advancing towards the field

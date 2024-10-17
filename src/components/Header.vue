@@ -1,5 +1,13 @@
 <script setup>
-import { computed } from "vue";
+import { computed, ref, onMounted } from "vue";
+import lightLogo from "../assets/images/logo-light.png";
+import darkLogo from "../assets/images/logo-dark.png";
+
+const currentLogo = ref(lightLogo);
+
+const updateLogo = (e) => {
+  currentLogo.value = e.matches ? darkLogo : lightLogo;
+};
 
 const props = defineProps({
   isMenuOpen: Boolean,
@@ -25,10 +33,16 @@ const emit = defineEmits(["toggle-menu"]);
 const toggleMenu = () => {
   emit("toggle-menu", !props.isMenuOpen);
 };
+
+onMounted(() => {
+  const darkModeActive = window.matchMedia("(prefers-color-scheme: dark)");
+  currentLogo.value = darkModeActive.matches ? darkLogo : lightLogo;
+  darkModeActive.addEventListener("change", updateLogo);
+});
 </script>
 
 <template>
-  <header class="fixed top-0 w-full z-10 pt-2">
+  <header class="fixed top-0 w-full z-10 mt-2">
     <div class="container mx-auto md:px-32">
       <div
         class="px-6 py-2 flex items-center justify-between backdrop-blur md:rounded-full md:border"
@@ -36,7 +50,7 @@ const toggleMenu = () => {
         <!-- Logo -->
         <h1>
           <img
-            src="../assets/images/logo.png"
+            :src="currentLogo"
             alt="Yuch3n Chen"
             class="w-6 h-6 md:w-8 md:h-8"
           />
@@ -44,16 +58,11 @@ const toggleMenu = () => {
 
         <!-- Desktop -->
         <nav class="hidden md:flex space-x-4">
-          <!-- <a href="#section_about" class="text-gray-600 hover:text-gray-900"
-            >about</a
-          >
-          <a href="#" class="text-gray-600 hover:text-gray-900">projects</a>
-          <a href="#" class="text-gray-600 hover:text-gray-900">contact</a> -->
           <a
             v-for="(item, index) in menuItems"
             :key="item.href"
             :href="item.href"
-            class="text-gray-600 hover:text-gray-900"
+            class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
             >{{ item.text }}</a
           >
         </nav>
@@ -80,13 +89,13 @@ const toggleMenu = () => {
         <Transition name="slide-fade">
           <nav
             v-show="isMenuOpen"
-            class="md:hidden bg-white py-2 px-4 absolute top-full w-full left-0 z-10 space-y-2"
+            class="md:hidden bg-white dark:bg-[#242424] py-4 px-4 absolute top-full w-full left-0 z-10 space-y-2"
           >
             <a
               v-for="(item, index) in menuItems"
               :key="item.href"
               :href="item.href"
-              class="block text-gray-600 hover:text-gray-900"
+              class="block text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
               >{{ item.text }}</a
             >
           </nav>
