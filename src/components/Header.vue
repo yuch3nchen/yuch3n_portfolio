@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref, onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import lightLogo from "../assets/images/logo-light.png";
 import darkLogo from "../assets/images/logo-dark.png";
 
@@ -13,7 +13,7 @@ const props = defineProps({
   isMenuOpen: Boolean,
 });
 
-const menuItems = computed(() => [
+const menuItems = ref([
   {
     text: "about",
     href: "#section_about",
@@ -43,9 +43,9 @@ onMounted(() => {
 
 <template>
   <header class="fixed top-0 w-full z-10 mt-2">
-    <div class="container mx-auto md:px-32">
+    <div class="md:container md:mx-auto xl:px-32">
       <div
-        class="px-6 py-2 flex items-center justify-between backdrop-blur md:rounded-full md:border"
+        class="px-6 py-2 flex items-center justify-between backdrop-blur md:rounded-full md:border dark:md:border-gray-500"
       >
         <!-- Logo -->
         <h1>
@@ -102,94 +102,13 @@ onMounted(() => {
         </Transition>
       </div>
     </div>
-
-    <!-- Turbulence -->
-    <svg>
-      <defs>
-        <filter id="shake-1">
-          <feTurbulence
-            id="turbulence"
-            baseFrequency="0.02 1"
-            numOctaves="3"
-            result="noise"
-            seed="0"
-          />
-          <feDisplacementMap
-            id="displacement"
-            in="SourceGraphic"
-            in2="noise"
-            scale="2"
-          />
-        </filter>
-        <filter id="shake-2">
-          <feTurbulence
-            id="turbulence"
-            baseFrequency="0.02 1"
-            numOctaves="3"
-            result="noise"
-            seed="1"
-          />
-          <feDisplacementMap
-            id="displacement"
-            in="SourceGraphic"
-            in2="noise"
-            scale="3"
-          />
-        </filter>
-        <filter id="shake-3">
-          <feTurbulence
-            id="turbulence"
-            baseFrequency="0.02 1"
-            numOctaves="3"
-            result="noise"
-            seed="2"
-          />
-          <feDisplacementMap
-            id="displacement"
-            in="SourceGraphic"
-            in2="noise"
-            scale="6"
-          />
-        </filter>
-        <filter id="shake-4">
-          <feTurbulence
-            id="turbulence"
-            baseFrequency="0.02 1"
-            numOctaves="3"
-            result="noise"
-            seed="4"
-          />
-          <feDisplacementMap
-            id="displacement"
-            in="SourceGraphic"
-            in2="noise"
-            scale="4"
-          />
-        </filter>
-        <filter id="shake-5">
-          <feTurbulence
-            id="turbulence"
-            baseFrequency="0.02 1"
-            numOctaves="3"
-            result="noise"
-            seed="5"
-          />
-          <feDisplacementMap
-            id="displacement"
-            in="SourceGraphic"
-            in2="noise"
-            scale="2"
-          />
-        </filter>
-      </defs>
-    </svg>
   </header>
 </template>
 
 <style lang="scss">
 nav {
   a:hover {
-    animation: 800ms shake ease-in-out infinite;
+    animation: 1000ms shake ease-in-out infinite;
   }
 }
 
@@ -202,23 +121,5 @@ nav {
 .slide-fade-leave-to {
   transform: translateY(-20px);
   opacity: 0;
-}
-
-@keyframes shake {
-  0% {
-    filter: url(#shake-1);
-  }
-  25% {
-    filter: url(#shake-2);
-  }
-  50% {
-    filter: url(#shake-3);
-  }
-  75% {
-    filter: url(#shake-4);
-  }
-  100% {
-    filter: url(#shake-5);
-  }
 }
 </style>
