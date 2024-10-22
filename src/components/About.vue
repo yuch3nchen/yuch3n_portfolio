@@ -6,11 +6,11 @@
     <img
       src="../assets/images/profile.jpeg"
       alt="Yuchen's profile photo"
-      class="profile-img place-self-center md:shadow-lg md:hover:shadow-xl md:col-span-2 lg:col-span-1"
+      class="place-self-center md:shadow-lg md:hover:shadow-xl md:col-span-2 lg:col-span-1 svg-shake"
     />
     <article class="md:px-0 px-6 md:col-span-2 lg:col-span-3">
       <h2 class="font-bold text-2xl tex-pretty">
-        Hi there! I'm Yuch3n. Based in Taiwan.
+        Hi there! I'm <span class="svg-shake">Yuch3n</span>. Based in Taiwan.
       </h2>
       <p class="text-pretty">
         As a multidisciplinary talent, I'm actively advancing towards the field
@@ -24,10 +24,4 @@
     </article>
   </section>
 </template>
-<style>
-.profile-img {
-  &:hover {
-    animation: shake 1000ms ease-in-out infinite;
-  }
-}
-</style>
+<style></style>

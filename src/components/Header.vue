@@ -2,6 +2,7 @@
 import { ref, onMounted } from "vue";
 import lightLogo from "../assets/images/logo-light.png";
 import darkLogo from "../assets/images/logo-dark.png";
+import navbarData from "../assets/data/contents.json";
 
 const currentLogo = ref(lightLogo);
 
@@ -13,21 +14,7 @@ const props = defineProps({
   isMenuOpen: Boolean,
 });
 
-const menuItems = ref([
-  {
-    text: "about",
-    href: "#section_about",
-  },
-  {
-    text: "projects",
-    href: "#section_projects",
-  },
-  {
-    text: "contact",
-    href: "#section_contact",
-  },
-]);
-
+const menuItems = ref(navbarData.navbar);
 const emit = defineEmits(["toggle-menu"]);
 
 const toggleMenu = () => {
@@ -42,10 +29,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <header class="fixed top-0 w-full z-10 mt-2">
+  <header class="fixed top-0 w-full z-10 pt-2 bg-white md:bg-transparent">
     <div class="md:container md:mx-auto xl:px-32">
       <div
-        class="px-6 py-2 flex items-center justify-between backdrop-blur md:rounded-full md:border dark:md:border-gray-500"
+        class="px-6 py-2 flex items-center justify-between md:backdrop-blur md:rounded-full md:border dark:md:border-gray-500"
       >
         <!-- Logo -->
         <h1>
@@ -62,7 +49,7 @@ onMounted(() => {
             v-for="(item, index) in menuItems"
             :key="item.href"
             :href="item.href"
-            class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
+            class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 svg-shake"
             >{{ item.text }}</a
           >
         </nav>
@@ -95,7 +82,7 @@ onMounted(() => {
               v-for="(item, index) in menuItems"
               :key="item.href"
               :href="item.href"
-              class="block text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
+              class="block text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 svg-shake"
               >{{ item.text }}</a
             >
           </nav>
@@ -106,11 +93,11 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-nav {
-  a:hover {
-    animation: 1000ms shake ease-in-out infinite;
-  }
-}
+// nav {
+//   a:hover {
+//     animation: 1000ms shake ease-in-out infinite;
+//   }
+// }
 
 .slide-fade-enter-active,
 .slide-fade-leave-active {

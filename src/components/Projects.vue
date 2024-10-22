@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import projectsData from "../assets/data/projects.json";
+import projectsData from "../assets/data/contents.json";
 
 const projects = ref(
   projectsData.projects.map((project) => {
@@ -13,27 +13,29 @@ const projects = ref(
 </script>
 
 <template>
-  <div class="container mx-auto md:px-16 xl:px-48 mt-20">
-    <h2 class="text-5xl mb-12">Projects</h2>
-    <div class="wall grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
-      <div
+  <div class="container mx-auto md:px-16 px-4 xl:px-48 mt-20">
+    <h2 class="text-3xl mb-12">Projects</h2>
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-3">
+      <a
         v-for="project in projects"
         :key="project.link"
-        class="block rounded-lg text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white border"
+        :href="project.link"
+        target="_blank"
+        class="group block border p-2 rounded-md relative break-inside-avoid-column"
       >
-        <div class="relative overflow-hidden bg-cover bg-no-repeat">
-          <img class="rounded-t-lg" :src="project.image" :alt="project.name" />
+        <img :src="project.image" :alt="project.name" class="w-full rounded" />
+        <div
+          class="absolute inset-0 m-2 bg-white/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded"
+        >
+          <h3
+            class="font-bold text-xl text-center px-4 transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+          >
+            {{ project.name }}
+          </h3>
         </div>
-        <div class="p-6">
-          <h3 class="font-bold text-3xl">{{ project.name }}</h3>
-          <p class="text-base">
-            {{ project.info }}
-          </p>
-          <a :href="project.link">Link</a>
-        </div>
-      </div>
+      </a>
     </div>
   </div>
 </template>
 
-<style></style>
+<style scoped></style>
