@@ -6,7 +6,7 @@ const projects = ref(
   projectsData.projects.map((project) => {
     return {
       ...project,
-      image: new URL(project.image, import.meta.url).href, // 確保圖片路徑正確
+      image: new URL(`../assets/images/${project.image}`, import.meta.url).href, // 確保圖片路徑正確
     };
   })
 );
