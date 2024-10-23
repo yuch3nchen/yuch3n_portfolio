@@ -6,11 +6,7 @@ const projects = ref(
   projectsData.projects.map((project) => {
     const transformed = {
       ...project,
-<<<<<<< HEAD
-      image: new URL(`../assets/images/${project.image}`, import.meta.url).href,
-=======
       image: new URL(`../assets/images/${project.image}`, import.meta.url).href, // 確保圖片路徑正確
->>>>>>> 2d859485a35d74d238b8edd73645c8d6595371e7
     };
     return transformed;
   })
