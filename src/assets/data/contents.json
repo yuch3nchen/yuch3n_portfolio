@@ -8,25 +8,37 @@
     {
       "name": "RSS-Line-Notifier",
       "image": "rss-preview.png",
+<<<<<<< HEAD
       "github": "https://github.com/yuch3nchen/rss-line-notifier",
+=======
+>>>>>>> 2d859485a35d74d238b8edd73645c8d6595371e7
       "link": "https://github.com/yuch3nchen/rss-line-notifier"
     },
     {
       "name": "Vue Expense Tracker",
       "image": "vue-expense-tracker-preview.png",
+<<<<<<< HEAD
       "github": "https://github.com/yuch3nchen/vue3-expense-tracker",
+=======
+>>>>>>> 2d859485a35d74d238b8edd73645c8d6595371e7
       "link": "https://yuch3nchen.github.io/vue3-expense-tracker"
     },
     {
       "name": "Vue Notepad",
       "image": "vue-notepad-preview.png",
+<<<<<<< HEAD
       "github": "https://github.com/yuch3nchen/vue-notepad",
+=======
+>>>>>>> 2d859485a35d74d238b8edd73645c8d6595371e7
       "link": "https://yuch3nchen.github.io/vue-notepad"
     },
     {
       "name": "Vue Todolist",
       "image": "vue-todolist-preview.png",
+<<<<<<< HEAD
       "github": "https://github.com/yuch3nchen/vue2-cli-todolist",
+=======
+>>>>>>> 2d859485a35d74d238b8edd73645c8d6595371e7
       "link": "https://yuch3nchen.github.io/vue2-cli-todolist"
     }
   ],
