@@ -29,65 +29,65 @@ onMounted(() => {
 </script>
 
 <template>
-  <header class="fixed top-0 w-full z-10 pt-2 bg-white md:bg-transparent">
-    <div class="md:container md:mx-auto xl:px-32">
-      <div
-        class="px-6 py-2 flex items-center justify-between md:backdrop-blur md:rounded-full md:border dark:md:border-gray-500"
-      >
-        <!-- Logo -->
-        <h1>
-          <img
-            :src="currentLogo"
-            alt="Yuch3n Chen"
-            class="w-6 h-6 md:w-8 md:h-8"
-          />
-        </h1>
+  <header
+    class="fixed top-0 w-full z-10 bg-transparent py-2 md:px-0.5 lg:px-1 xl:px-52"
+  >
+    <div
+      class="md:container md:mx-auto px-2 md:px-6 py-2 flex items-center justify-between md:backdrop-blur md:rounded-full md:border dark:md:border-gray-500 relative"
+    >
+      <!-- Logo -->
+      <h1>
+        <img
+          :src="currentLogo"
+          alt="Yuch3n Chen"
+          class="w-6 h-6 md:w-8 md:h-8"
+        />
+      </h1>
 
-        <!-- Desktop -->
-        <nav class="hidden md:flex space-x-4">
+      <!-- Desktop -->
+      <nav class="hidden md:flex space-x-4">
+        <a
+          v-for="(item, index) in menuItems"
+          :key="item.href"
+          :href="item.href"
+          class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 svg-shake"
+          >{{ item.text }}</a
+        >
+      </nav>
+
+      <!-- Burger button -->
+      <button @click="toggleMenu" class="md:hidden bg-transparent">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Mobile -->
+      <Transition name="slide-fade">
+        <nav
+          v-show="isMenuOpen"
+          class="md:hidden bg-white dark:bg-[#242424] py-4 px-4 absolute top-full w-full left-0 z-10 space-y-2"
+        >
           <a
             v-for="(item, index) in menuItems"
             :key="item.href"
             :href="item.href"
-            class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 svg-shake"
+            class="block text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 svg-shake"
             >{{ item.text }}</a
           >
         </nav>
-
-        <!-- Burger button -->
-        <button @click="toggleMenu" class="md:hidden bg-transparent">
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
-        </button>
-
-        <!-- Mobile -->
-        <Transition name="slide-fade">
-          <nav
-            v-show="isMenuOpen"
-            class="md:hidden bg-white dark:bg-[#242424] py-4 px-4 absolute top-full w-full left-0 z-10 space-y-2"
-          >
-            <a
-              v-for="(item, index) in menuItems"
-              :key="item.href"
-              :href="item.href"
-              class="block text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 svg-shake"
-              >{{ item.text }}</a
-            >
-          </nav>
-        </Transition>
-      </div>
+      </Transition>
     </div>
   </header>
 </template>

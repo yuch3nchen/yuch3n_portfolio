@@ -81,6 +81,10 @@
 </template>
 
 <style>
+svg {
+  width: 0;
+  height: 0;
+}
 @keyframes shake {
   0% {
     filter: url(#shake-1);

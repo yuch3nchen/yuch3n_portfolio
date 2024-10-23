@@ -3,7 +3,6 @@ import { ref } from "vue";
 import Header from "./components/Header.vue";
 import About from "./components/About.vue";
 import Projects from "./components/Projects.vue";
-import Contact from "./components/Contact.vue";
 import Turbulenece from "./components/Turbulenece.vue";
 
 const isMenuOpen = ref(false);
@@ -16,9 +15,8 @@ const toggleMenu = (value) => {
 <template>
   <Header :is-menu-open="isMenuOpen" @toggle-menu="toggleMenu" />
   <div :class="{ 'blur-sm': isMenuOpen }" class="transition-all duration-300">
-    <About id="section_about" />
-    <Projects id="section_projects" />
-    <Contact id="section_contact" />
+    <About id="section_about" class="scroll-mt-16" />
+    <Projects id="section_projects" class="scroll-mt-16" />
   </div>
   <Turbulenece></Turbulenece>
 </template>
