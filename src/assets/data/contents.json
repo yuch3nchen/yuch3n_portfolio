@@ -32,11 +32,13 @@
   ],
   "navbar": [
     {
-      "text": "about",
+      "id": 1,
+      "textKey": "navbar.about",
       "href": "#section_about"
     },
     {
-      "text": "projects",
+      "id": 2,
+      "textKey": "navbar.projects",
       "href": "#section_projects"
     }
   ]

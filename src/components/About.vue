@@ -1,4 +1,8 @@
-<script></script>
+<script setup>
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+</script>
 <template>
   <section
     class="container mx-auto md:px-16 xl:px-48 mt-14 md:mt-20 grid grid-cols-1 md:grid-cols-4 gap-y-4 md:gap-4 place-content-between"
@@ -9,26 +13,22 @@
       class="place-self-center md:shadow-lg md:hover:shadow-xl md:col-span-2 lg:col-span-1 svg-shake"
     />
     <article
-      class="px-9 md:px-0 md:col-span-2 lg:col-span-3 flex flex-col gap-6"
+      class="px-9 md:px-0 md:col-span-2 lg:col-span-3 flex flex-col justify-between gap-6"
     >
       <div class="text-pretty">
-        <h2 class="font-bold text-2xl">
-          Hi there! I'm <span class="svg-shake">Yuch3n</span>. Based in Taiwan.
+        <h2 class="font-bold text-2xl mb-2">
+          {{ t("greetings.start")
+          }}<span class="svg-shake">{{ t("name") }}</span
+          >{{ t("greetings.end", { location: t("location") }) }}
         </h2>
         <p>
-          As a multidisciplinary talent, I'm actively advancing towards the
-          field of software development. My rich experience in customer service
-          and project management has laid a solid foundation for my technical
-          learning journey. Passionate about front-end development, I focus on
-          learning Vue3.js and have applied SCSS and Bootstrap5 in personal
-          projects. Furthermore, I've explored Node.js and Tailwind CSS,
-          demonstrating my enthusiasm and potential in front-end technologies.
+          {{ t("text-about") }}
         </p>
       </div>
       <div class="flex gap-2">
         <a href="mailto:yuch3nchen@gmail.com" class="rounded-full p-2 border">
           <svg
-            class="w-4 h-4 dark:fill-gray-300"
+            class="w-6 h-6 dark:fill-gray-300"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
@@ -39,7 +39,7 @@
         </a>
         <a href="https://github.com/yuch3nchen" class="rounded-full p-2 border">
           <svg
-            class="w-4 h-4 dark:fill-gray-300"
+            class="w-6 h-6 dark:fill-gray-300"
             xmlns="http://www.w3.org/2000/svg"
             fill="#181717"
             viewBox="0 0 24 24"

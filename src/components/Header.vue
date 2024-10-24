@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
 import lightLogo from "../assets/images/logo-light.png";
 import darkLogo from "../assets/images/logo-dark.png";
 import navbarData from "../assets/data/contents.json";
@@ -14,6 +15,7 @@ const props = defineProps({
   isMenuOpen: Boolean,
 });
 
+const { t, locale } = useI18n();
 const menuItems = ref(navbarData.navbar);
 const emit = defineEmits(["toggle-menu"]);
 
@@ -36,22 +38,28 @@ onMounted(() => {
       class="md:container md:mx-auto px-2 md:px-6 py-2 flex items-center justify-between md:backdrop-blur md:rounded-full md:border dark:md:border-gray-500 relative"
     >
       <!-- Logo -->
-      <h1>
-        <img
-          :src="currentLogo"
-          alt="Yuch3n Chen"
-          class="w-6 h-6 md:w-8 md:h-8"
-        />
-      </h1>
+      <div class="flex gap-4">
+        <h1>
+          <img
+            :src="currentLogo"
+            alt="Yuch3n Chen"
+            class="w-6 h-6 md:w-8 md:h-8"
+          />
+        </h1>
+        <select v-model="locale" class="bg-transparent">
+          <option value="zh">繁中</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
 
       <!-- Desktop -->
       <nav class="hidden md:flex space-x-4">
         <a
-          v-for="(item, index) in menuItems"
-          :key="item.href"
+          v-for="item in menuItems"
+          :key="item.id"
           :href="item.href"
           class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 svg-shake"
-          >{{ item.text }}</a
+          >{{ t(item.textKey) }}</a
         >
       </nav>
 
@@ -80,11 +88,11 @@ onMounted(() => {
           class="md:hidden bg-white dark:bg-[#242424] py-4 px-4 absolute top-full w-full left-0 z-10 space-y-2"
         >
           <a
-            v-for="(item, index) in menuItems"
-            :key="item.href"
+            v-for="item in menuItems"
+            :key="item.id"
             :href="item.href"
             class="block text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 svg-shake"
-            >{{ item.text }}</a
+            >{{ t(item.textKey) }}</a
           >
         </nav>
       </Transition>

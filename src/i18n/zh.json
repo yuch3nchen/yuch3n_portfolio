@@ -1,0 +1,14 @@
+{
+  "navbar": {
+    "about": "關於我",
+    "projects": "作品集"
+  },
+  "project": "作品",
+  "name": "Yuch3n",
+  "location": "台灣",
+  "greetings": {
+    "start": "嗨！我是 ",
+    "end": "，目前居住在{location}"
+  },
+  "text-about": "作為一位跨領域人才，我正積極朝向軟體開發領域邁進。豐富的客戶服務與專案管理經驗為我的技術學習奠定了紮實基礎。熱衷於前端開發，我專注學習Vue3.js，並在個人項目中運用SCSS及Bootstrap5。此外，我也接觸過Node.js和Tailwind CSS，展現了我對前端技術的學習熱情和潛力。"
+}
