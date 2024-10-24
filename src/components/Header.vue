@@ -1,11 +1,12 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { useI18n } from "vue-i18n";
 import lightLogo from "../assets/images/logo-light.png";
 import darkLogo from "../assets/images/logo-dark.png";
 import navbarData from "../assets/data/contents.json";
 
 const currentLogo = ref(lightLogo);
+const navbarRef = ref(null);
 
 const updateLogo = (e) => {
   currentLogo.value = e.matches ? darkLogo : lightLogo;
@@ -23,15 +24,35 @@ const toggleMenu = () => {
   emit("toggle-menu", !props.isMenuOpen);
 };
 
+const handleClickOutsideNav = (e) => {
+  // 當 isMenuOpen 是 true(打開)才檢查
+  if (props.isMenuOpen) {
+    const isClickInside = navbarRef.value?.contains(e.target);
+
+    // 如果是在navbar外部，就關閉
+    if (!isClickInside) {
+      emit("toggle-menu", false);
+    }
+  }
+};
+
 onMounted(() => {
   const darkModeActive = window.matchMedia("(prefers-color-scheme: dark)");
   currentLogo.value = darkModeActive.matches ? darkLogo : lightLogo;
   darkModeActive.addEventListener("change", updateLogo);
+
+  document.addEventListener("click", handleClickOutsideNav);
+});
+
+onUnmounted(() => {
+  document.removeEventListener("click", handleClickOutsideNav);
 });
 </script>
 
 <template>
   <header
+    ref="navbarRef"
+    :class="{ 'bg-white': props.isMenuOpen }"
     class="fixed top-0 w-full z-10 bg-transparent py-2 md:px-0.5 lg:px-1 xl:px-52"
   >
     <div
@@ -64,7 +85,7 @@ onMounted(() => {
       </nav>
 
       <!-- Burger button -->
-      <button @click="toggleMenu" class="md:hidden bg-transparent">
+      <button @click.stop="toggleMenu" class="md:hidden bg-transparent">
         <svg
           class="w-6 h-6"
           fill="none"
@@ -91,6 +112,7 @@ onMounted(() => {
             v-for="item in menuItems"
             :key="item.id"
             :href="item.href"
+            @click="toggleMenu"
             class="block text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 svg-shake"
             >{{ t(item.textKey) }}</a
           >
@@ -101,12 +123,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-// nav {
-//   a:hover {
-//     animation: 1000ms shake ease-in-out infinite;
-//   }
-// }
-
 .slide-fade-enter-active,
 .slide-fade-leave-active {
   transition: all 0.3s ease;
