@@ -52,8 +52,8 @@ onUnmounted(() => {
 <template>
   <header
     ref="navbarRef"
-    :class="{ 'bg-white': props.isMenuOpen }"
-    class="fixed top-0 w-full z-10 bg-transparent py-2 md:px-0.5 lg:px-1 xl:px-52"
+    :class="props.isMenuOpen ? 'bg-white dark:bg-[#242424]' : 'bg-transparent'"
+    class="fixed top-0 w-full z-10 py-2 md:px-0.5 lg:px-1 xl:px-52"
   >
     <div
       class="md:container md:mx-auto px-2 md:px-6 py-2 flex items-center justify-between md:backdrop-blur md:rounded-full md:border dark:md:border-gray-500 relative"
@@ -125,7 +125,7 @@ onUnmounted(() => {
 <style lang="scss">
 .slide-fade-enter-active,
 .slide-fade-leave-active {
-  transition: all 0.3s ease;
+  transition: all 0.2s ease-in-out;
 }
 
 .slide-fade-enter-from,
