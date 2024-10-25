@@ -1,16 +1,29 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, nextTick } from "vue";
 import Header from "./components/Header.vue";
 import About from "./components/About.vue";
 import Projects from "./components/Projects.vue";
 import Footer from "./components/Footer.vue";
 import Turbulenece from "./components/Turbulenece.vue";
+import AOS from "aos";
 
 const isMenuOpen = ref(false);
 
 const toggleMenu = (value) => {
   isMenuOpen.value = value;
 };
+
+onMounted(() => {
+  // 等待所有組件掛載完成
+  nextTick(() => {
+    AOS.init({
+      duration: 1000,
+      offset: 50,
+      once: true,
+    });
+    AOS.refresh();
+  });
+});
 </script>
 
 <template>
@@ -18,7 +31,7 @@ const toggleMenu = (value) => {
   <div :class="{ 'blur-sm': isMenuOpen }" class="transition-all duration-300">
     <About id="section_about" class="scroll-mt-16" />
     <Projects id="section_projects" class="scroll-mt-16" />
-    <Footer></Footer>
+    <Footer />
   </div>
   <Turbulenece></Turbulenece>
 </template>

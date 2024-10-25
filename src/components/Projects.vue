@@ -1,7 +1,8 @@
 <script setup>
-import { ref } from "vue";
+import { nextTick, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import projectsData from "../assets/data/contents.json";
+import AOS from "aos";
 
 const { t } = useI18n();
 const projects = ref(
@@ -13,6 +14,12 @@ const projects = ref(
     return transformed;
   })
 );
+
+watch(projects, () => {
+  nextTick(() => {
+    AOS.refresh();
+  });
+});
 // console.log(projects);
 </script>
 
@@ -22,8 +29,11 @@ const projects = ref(
     <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-3 mb-12">
       <div
         class="group block border p-2 rounded-md relative break-inside-avoid-column"
-        v-for="project in projects"
+        v-for="(project, index) in projects"
         :key="project.link"
+        data-aos="flip-up"
+        :data-aos-delay="index * 100"
+        data-aos-duration="400"
       >
         <img
           :src="project.image"
