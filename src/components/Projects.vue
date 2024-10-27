@@ -46,7 +46,7 @@ watch(projects, () => {
             {{ project.name }}
           </h3>
 
-          <a v-if="project.github" :href="project.github">
+          <a v-if="project.github" :href="project.github" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#181717"
@@ -58,7 +58,7 @@ watch(projects, () => {
               />
             </svg>
           </a>
-          <a :href="project.link">
+          <a :href="project.link" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 576 512"
@@ -79,7 +79,7 @@ watch(projects, () => {
             {{ project.name }}
           </h3>
           <div class="flex gap-4">
-            <a v-if="project.github" :href="project.github">
+            <a v-if="project.github" :href="project.github" target="_blank">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="#181717"
@@ -91,7 +91,7 @@ watch(projects, () => {
                 />
               </svg>
             </a>
-            <a :href="project.link">
+            <a :href="project.link" target="_blank">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"

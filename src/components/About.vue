@@ -1,7 +1,28 @@
 <script setup>
+import { ref, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 
+const isMobile = ref(false);
+const isClicked = ref(false);
 const { t } = useI18n();
+
+onMounted(() => {
+  // 檢查是否為觸控裝置
+  isMobile.value = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+});
+
+const handleClick = (e) => {
+  if (isMobile.value) {
+    isClicked.value = !isClicked.value;
+    // 如果是手機版，（點兩次）切換文字才開分頁
+    if (isClicked.value) {
+      window.open(e.currentTarget.href, "_blank");
+    }
+  } else {
+    // 桌機點擊後直接開啟分頁
+    window.open(e.currentTarget.href, "_blank");
+  }
+};
 </script>
 <template>
   <section
@@ -37,7 +58,11 @@ const { t } = useI18n();
             />
           </svg>
         </a>
-        <a href="https://github.com/yuch3nchen" class="rounded-full p-2 border">
+        <a
+          href="https://github.com/yuch3nchen"
+          target="_blank"
+          class="rounded-full p-2 border"
+        >
           <svg
             class="w-6 h-6 dark:fill-gray-300"
             xmlns="http://www.w3.org/2000/svg"
@@ -49,8 +74,71 @@ const { t } = useI18n();
             />
           </svg>
         </a>
+        <a
+          href="https://www.cake.me/s--1fxe5eYGpF0v6kRBk0Q8SA--/yuchenchen"
+          class="group border rounded-full py-2 px-4 inline-flex items-center transition-colors gap-2"
+          @click.prevent="handleClick"
+        >
+          <div class="flex-shrink-0">
+            <span
+              class="light block w-3 h-3 rounded-full animate-pulse bg-green-400"
+            ></span>
+          </div>
+
+          <div
+            class="status-text relative overflow-hidden w-full flex-grow text-center"
+          >
+            <span
+              class="block transition-transform duration-300"
+              :class="{ 'mobile-up': isMobile && isClicked }"
+              >{{ t("status-open") }}</span
+            >
+            <span
+              class="absolute top-0 left-0 w-full transition-translate duration-300 translate-y-full"
+              :class="{ 'mobile-down': isMobile && isClicked }"
+              >{{ t("resume") }}</span
+            >
+          </div>
+        </a>
       </div>
     </article>
   </section>
 </template>
-<style></style>
+<style scoped>
+.light {
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+}
+
+/* 桌機版 */
+@media (hover: hover) {
+  .group:hover {
+    .status-text {
+      span {
+        &:first-child {
+          transform: translateY(-100%);
+        }
+        &:last-child {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+/* 行動裝置 */
+.mobile-up {
+  transform: translateY(-100%) !important;
+}
+
+.mobile-down {
+  transform: translateY(0) !important;
+}
+
+.status-text {
+  span {
+    &:last-child {
+      transform: translateY(100%);
+    }
+  }
+}
+</style>
