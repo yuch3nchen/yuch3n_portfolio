@@ -47,9 +47,12 @@ const handleClick = (e) => {
         </p>
       </div>
       <div class="flex gap-2">
-        <a href="mailto:yuch3nchen@gmail.com" class="rounded-full p-2 border">
+        <a
+          href="mailto:yuch3nchen@gmail.com"
+          class="group rounded-full p-2 border hover:bg-[#242424] dark:hover:bg-white"
+        >
           <svg
-            class="w-6 h-6 dark:fill-gray-300"
+            class="w-6 h-6 dark:fill-gray-300 group-hover:fill-gray-300 dark:group-hover:fill-[#242424]"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
@@ -61,12 +64,11 @@ const handleClick = (e) => {
         <a
           href="https://github.com/yuch3nchen"
           target="_blank"
-          class="rounded-full p-2 border"
+          class="group rounded-full p-2 border hover:bg-[#242424] dark:hover:bg-white"
         >
           <svg
-            class="w-6 h-6 dark:fill-gray-300"
+            class="w-6 h-6 dark:fill-gray-300 group-hover:fill-white dark:group-hover:fill-[#242424]"
             xmlns="http://www.w3.org/2000/svg"
-            fill="#181717"
             viewBox="0 0 24 24"
           >
             <path
@@ -76,7 +78,7 @@ const handleClick = (e) => {
         </a>
         <a
           href="https://www.cake.me/s--1fxe5eYGpF0v6kRBk0Q8SA--/yuchenchen"
-          class="group border rounded-full py-2 px-4 inline-flex items-center transition-colors gap-2"
+          class="group border rounded-full py-2 px-4 inline-flex items-center gap-2"
           @click.prevent="handleClick"
         >
           <div class="flex-shrink-0">
