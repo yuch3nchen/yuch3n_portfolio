@@ -52,7 +52,7 @@ const handleClick = (e) => {
           class="group rounded-full p-2 border hover:bg-[#242424] dark:hover:bg-white"
         >
           <svg
-            class="w-6 h-6 dark:fill-gray-300 group-hover:fill-gray-300 dark:group-hover:fill-[#242424]"
+            class="w-6 h-6 dark:fill-gray-300 group-hover:fill-white dark:group-hover:fill-[#242424]"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
