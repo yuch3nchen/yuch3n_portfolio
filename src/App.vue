@@ -3,6 +3,7 @@ import { ref, onMounted, nextTick } from "vue";
 import Header from "./components/Header.vue";
 import About from "./components/About.vue";
 import Projects from "./components/Projects.vue";
+import TechStack from "./components/TechStack.vue";
 import Footer from "./components/Footer.vue";
 import Turbulenece from "./components/Turbulenece.vue";
 import AOS from "aos";
@@ -31,6 +32,7 @@ onMounted(() => {
   <div :class="{ 'blur-sm': isMenuOpen }" class="transition-all duration-300">
     <About id="section_about" class="scroll-mt-16" />
     <Projects id="section_projects" class="scroll-mt-16" />
+    <TechStack />
     <Footer />
   </div>
   <Turbulenece></Turbulenece>

@@ -107,10 +107,6 @@ const handleClick = (e) => {
   </section>
 </template>
 <style scoped>
-.light {
-  box-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
-}
-
 /* 桌機版 */
 @media (hover: hover) {
   .group:hover {

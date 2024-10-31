@@ -41,5 +41,75 @@
       "textKey": "navbar.projects",
       "href": "#section_projects"
     }
-  ]
+  ],
+  "techStack": {
+    "light": [
+      {
+        "name": "HTML",
+        "iconUrl": "HTML5-light.svg"
+      },
+      {
+        "name": "CSS",
+        "iconUrl": "CSS3-light.svg"
+      },
+      {
+        "name": "JavaScript",
+        "iconUrl": "javaScript-light.svg"
+      },
+      {
+        "name": "Vue",
+        "iconUrl": "vuejs-light.svg"
+      },
+      {
+        "name": "Bootstrap",
+        "iconUrl": "bootstrap-light.svg"
+      },
+      {
+        "name": "TailwindCSS",
+        "iconUrl": "tailwindCSS-light.svg"
+      },
+      {
+        "name": "SCSS",
+        "iconUrl": "sass-light.svg"
+      },
+      {
+        "name": "Node.js",
+        "iconUrl": "nodejs-light.svg"
+      }
+    ],
+    "dark": [
+      {
+        "name": "HTML",
+        "iconUrl": "HTML5.svg"
+      },
+      {
+        "name": "CSS",
+        "iconUrl": "CSS3.svg"
+      },
+      {
+        "name": "JavaScript",
+        "iconUrl": "javaScript.svg"
+      },
+      {
+        "name": "Vue",
+        "iconUrl": "vuejs.svg"
+      },
+      {
+        "name": "Bootstrap",
+        "iconUrl": "bootstrap.svg"
+      },
+      {
+        "name": "TailwindCSS",
+        "iconUrl": "tailwindCSS.svg"
+      },
+      {
+        "name": "SCSS",
+        "iconUrl": "sass.svg"
+      },
+      {
+        "name": "Node.js",
+        "iconUrl": "nodejs.svg"
+      }
+    ]
+  }
 }
