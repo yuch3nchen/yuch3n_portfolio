@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from "vue";
 import projectsData from "../assets/data/contents.json";
+import AOS from "aos";
 
 const darkMode = ref(false);
 
@@ -25,6 +26,7 @@ onMounted(() => {
   const darkModeActive = window.matchMedia("(prefers-color-scheme: dark)");
   darkMode.value = darkModeActive.matches;
   darkModeActive.addEventListener("change", updateMode);
+  AOS.refresh();
 });
 
 onUnmounted(() => {
@@ -35,7 +37,11 @@ onUnmounted(() => {
 // console.log(lightIcons);
 </script>
 <template>
-  <div class="container px-9 py-12 mx-auto md:px-16 px-4 xl:px-48">
+  <div
+    data-aos="fade-up"
+    data-aos-duration="400"
+    class="container px-9 py-12 mx-auto md:px-16 px-4 xl:px-48"
+  >
     <div class="overflow-clip fadeout-horizontal">
       <div
         class="flex gap-12 pl-12 md:gap-16 md:pl-16 w-max animate-marquee-move"

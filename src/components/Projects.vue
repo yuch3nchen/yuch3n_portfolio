@@ -33,8 +33,8 @@ watch(projects, () => {
         class="group block border p-2 shadow rounded-md relative break-inside-avoid-column"
         v-for="(project, index) in projects"
         :key="project.link"
-        data-aos="flip-up"
-        :data-aos-delay="index * 100"
+        data-aos="fade-up"
+        :data-aos-delay="index * 150"
         data-aos-duration="400"
       >
         <img
