@@ -40,11 +40,11 @@ onUnmounted(() => {
   <div
     data-aos="fade-up"
     data-aos-duration="400"
-    class="container px-9 py-12 mx-auto md:px-16 px-4 xl:px-48"
+    class="hidden md:block container px-9 py-12 mx-auto md:px-16 px-4 xl:px-48"
   >
     <div class="overflow-clip fadeout-horizontal">
       <div
-        class="flex gap-12 pl-12 md:gap-16 md:pl-16 w-max animate-marquee-move"
+        class="flex gap-12 pl-12 md:gap-16 md:pl-16 w-max md:animate-marquee-move"
       >
         <img
           v-for="(img, index) in currentIcons"
@@ -60,6 +60,7 @@ onUnmounted(() => {
           :src="img.iconUrl"
           :alt="img.name"
           class="h-12"
+          aria-hidden="true"
         />
         <img
           v-for="(img, index) in currentIcons"
@@ -67,6 +68,7 @@ onUnmounted(() => {
           :src="img.iconUrl"
           :alt="img.name"
           class="h-12"
+          aria-hidden="true"
         />
       </div>
     </div>
