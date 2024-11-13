@@ -29,9 +29,9 @@ const handleClick = (e) => {
     class="container mx-auto md:px-16 xl:px-48 mt-14 md:mt-20 grid grid-cols-1 md:grid-cols-4 gap-y-4 md:gap-4 place-content-between"
   >
     <img
-      src="../assets/images/profile.jpeg"
+      src="../assets/images/profile-astro.png"
       alt="Yuchen's profile photo"
-      class="place-self-center md:shadow-lg md:hover:shadow-xl md:col-span-2 lg:col-span-1 svg-shake"
+      class="place-self-center md:col-span-2 lg:col-span-1 svg-shake"
     />
     <article
       class="px-9 md:px-0 md:col-span-2 lg:col-span-3 flex flex-col justify-between gap-6"
