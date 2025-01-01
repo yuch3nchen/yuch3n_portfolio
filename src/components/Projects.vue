@@ -35,14 +35,9 @@ watch(projects, () => {
         :key="project.link"
         data-aos="fade-up"
         :data-aos-delay="index * 150"
-        data-aos-duration="400"
+        data-aos-duration="800"
       >
-        <img
-          :src="project.image"
-          :alt="project.name"
-          class="w-full rounded"
-          loading="lazy"
-        />
+        <img :src="project.image" :alt="project.name" class="w-full rounded" />
         <div class="flex justify-end items-center gap-4 md:hidden p-4">
           <h3 class="text-xl mr-auto">
             {{ project.name }}
