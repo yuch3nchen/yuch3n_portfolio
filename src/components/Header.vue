@@ -1,8 +1,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import { useI18n } from "vue-i18n";
-import lightLogo from "../assets/images/logo-light.png";
-import darkLogo from "../assets/images/logo-dark.png";
+import lightLogo from "../assets/images/logo-light.webp";
+import darkLogo from "../assets/images/logo-dark.webp";
 import navbarData from "../assets/data/contents.json";
 
 const currentLogo = ref(lightLogo);
