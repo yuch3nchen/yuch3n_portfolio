@@ -1,7 +1,7 @@
 {
   "navbar": {
     "about": "關於我",
-    "projects": "作品集"
+    "blog": "部落格"
   },
   "project": "作品",
   "name": "Yuch3n",
@@ -10,7 +10,7 @@
     "start": "嗨！我是 ",
     "end": "，來自{location}。"
   },
-  "text-about": "作為一位跨領域人才，我正積極朝向軟體開發領域邁進。豐富的客戶服務與專案管理經驗為我的技術學習奠定了紮實基礎。熱衷於前端開發，我專注學習Vue3.js，並在個人項目中運用SCSS及Bootstrap5。此外，我也接觸過Node.js和Tailwind CSS，展現了我對前端技術的學習熱情和潛力。",
+  "text-about": "我是一名熱衷於前端技術開發與實踐的學習者。這個網站是以 Vue.js 與 TailwindCSS 精心打造，充分運用了 Vue.js 的組件化設計與 TailwindCSS 的高效樣式管理。這個網站展示了我的專案作品，還提供了前往部落格的連結，邀請您探索我的文章與心得。",
   "status-open": "積極求職中",
   "resume": "查看履歷",
   "footer": {

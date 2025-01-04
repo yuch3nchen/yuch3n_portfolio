@@ -76,8 +76,9 @@ const handleClick = (e) => {
             />
           </svg>
         </a>
-        <a
-          href="https://www.cake.me/s--1fxe5eYGpF0v6kRBk0Q8SA--/yuchenchen"
+        <!-- 暫時關閉履歷連結 -->
+        <!-- <a
+          href="#"
           class="group border rounded-full py-2 px-4 inline-flex items-center gap-2"
           @click.prevent="handleClick"
         >
@@ -101,7 +102,7 @@ const handleClick = (e) => {
               >{{ t("resume") }}</span
             >
           </div>
-        </a>
+        </a> -->
       </div>
     </article>
   </section>

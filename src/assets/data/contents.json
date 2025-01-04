@@ -38,8 +38,8 @@
     },
     {
       "id": 2,
-      "textKey": "navbar.projects",
-      "href": "#section_projects"
+      "textKey": "navbar.blog",
+      "href": "https://yuch3nchen.github.io"
     }
   ],
   "techStack": {

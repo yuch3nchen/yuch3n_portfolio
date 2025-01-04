@@ -79,6 +79,7 @@ onUnmounted(() => {
           v-for="item in menuItems"
           :key="item.id"
           :href="item.href"
+          :target="item.href.includes('https') ? '_blank' : '_self'"
           class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 svg-shake"
           >{{ t(item.textKey) }}</a
         >

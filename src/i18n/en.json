@@ -1,7 +1,7 @@
 {
   "navbar": {
     "about": "about",
-    "projects": "projects"
+    "blog": "blog"
   },
   "project": "Projects",
   "name": "Yuch3n",
@@ -10,7 +10,7 @@
     "start": "Hi there! I'm ",
     "end": ". Based in {location}."
   },
-  "text-about": "As a multidisciplinary talent, I'm actively advancing towards the field of software development. My rich experience in customer service and project management has laid a solid foundation for my technical learning journey. Passionate about front-end development, I focus on learning Vue3.js and have applied SCSS and Bootstrap5 in personal projects. Furthermore, I've explored Node.js and Tailwind CSS, demonstrating my enthusiasm and potential in front-end technologies.",
+  "text-about": "I am a learner passionate about front-end technology development and practice. This website is meticulously crafted using Vue.js and TailwindCSS, leveraging Vue.js's component-based architecture and TailwindCSS's efficient style management. It showcases my project portfolio and provides a link to my blog, inviting you to explore my articles and insights.",
   "status-open": "Open to work",
   "resume": "Resume",
   "footer": {
