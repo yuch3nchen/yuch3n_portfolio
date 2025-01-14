@@ -10,7 +10,7 @@
     "start": "Hi there! I'm ",
     "end": ". Based in {location}."
   },
-  "text-about": "I am a learner passionate about front-end technology development and practice. This website is meticulously crafted using Vue.js and TailwindCSS, leveraging Vue.js's component-based architecture and TailwindCSS's efficient style management. It showcases my project portfolio and provides a link to my blog, inviting you to explore my articles and insights.",
+  "text-about": "I am a passionate learner dedicated to frontend technology development and implementation. This website is carefully crafted using Vue.js and TailwindCSS, fully utilizing Vue.js's component-based design and TailwindCSS's efficient style management. This website showcases my project portfolio and will continue to be updated in the future. Feel free to contact me through email.",
   "status-open": "Open to work",
   "resume": "Resume",
   "footer": {

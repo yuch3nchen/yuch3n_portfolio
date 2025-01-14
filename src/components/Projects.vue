@@ -32,7 +32,7 @@ watch(projects, () => {
       <div
         class="group block border p-2 shadow rounded-md relative break-inside-avoid-column"
         v-for="(project, index) in projects"
-        :key="project.link"
+        :key="index"
         data-aos="fade-up"
         :data-aos-delay="index * 150"
         data-aos-duration="800"
@@ -55,7 +55,7 @@ watch(projects, () => {
               />
             </svg>
           </a>
-          <a :href="project.link" target="_blank">
+          <a v-if="project.link" :href="project.link" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 576 512"
@@ -88,7 +88,7 @@ watch(projects, () => {
                 />
               </svg>
             </a>
-            <a :href="project.link" target="_blank">
+            <a v-if="project.link" :href="project.link" target="_blank">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"

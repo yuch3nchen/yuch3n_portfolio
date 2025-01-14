@@ -10,7 +10,7 @@
     "start": "嗨！我是 ",
     "end": "，來自{location}。"
   },
-  "text-about": "我是一名熱衷於前端技術開發與實踐的學習者。這個網站是以 Vue.js 與 TailwindCSS 精心打造，充分運用了 Vue.js 的組件化設計與 TailwindCSS 的高效樣式管理。這個網站展示了我的專案作品，還提供了前往部落格的連結，邀請您探索我的文章與心得。",
+  "text-about": "我是一名熱衷於前端技術開發與實踐的學習者。這個網站是以 Vue.js 與 TailwindCSS 精心打造，充分運用了 Vue.js 的組件化設計與 TailwindCSS 的高效樣式管理。這個網站展示了我的專案作品，未來也會持續更新。也歡迎透過電子郵件等管道與我聯繫。",
   "status-open": "積極求職中",
   "resume": "查看履歷",
   "footer": {
