@@ -34,11 +34,6 @@
       "id": 1,
       "textKey": "navbar.about",
       "href": "#section_about"
-    },
-    {
-      "id": 2,
-      "textKey": "navbar.blog",
-      "href": "https://yuch3nchen.github.io"
     }
   ],
   "techStack": {

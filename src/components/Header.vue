@@ -56,7 +56,7 @@ onUnmounted(() => {
     class="fixed top-0 w-full z-10 py-2 md:px-0.5 lg:px-1 xl:px-52"
   >
     <div
-      class="md:container md:mx-auto px-2 md:px-6 py-2 flex items-center justify-between md:backdrop-blur md:rounded-full md:border dark:md:border-gray-500 relative"
+      class="md:container md:mx-auto px-2 md:px-6 py-2 flex items-center justify-between md:backdrop-blur-md md:rounded-full md:border dark:md:border-gray-500 relative"
     >
       <!-- Logo -->
       <div class="flex gap-4">
